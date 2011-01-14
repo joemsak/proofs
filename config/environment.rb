@@ -1,6 +1,4 @@
 # Be sure to restart your server when you modify this file
-require 'yaml'
-require 'active_merchant'
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
@@ -37,7 +35,8 @@ Rails::Initializer.run do |config|
 								:source => "http://gems.github.com"
 	config.gem "yfactorial-utility_scopes", :lib => false, :version => '0.2.2',
 								:source => "http://gems.github.com"
-
+  
+  config.gem "activemerchant", :lib => 'active_merchant', :version => '1.4.2'
 	
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.

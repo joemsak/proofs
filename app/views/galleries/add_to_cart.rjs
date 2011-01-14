@@ -1,4 +1,7 @@
 page << 'jQuery("#added_msg").remove(); jQuery("#submitBtn").val("Adding...").attr({ disabled: "disabled" });'
 page.replace_html("cart", :partial => "cart", :object => @cart)
-page[:cart].visual_effect :blind_down if @cart.total_items == 1
+if @cart.total_items == 1
+  page[:cart].visual_effect :blind_down 
+  page << 'jQuery("html,body").animate({scrollTop: jQuery("#cart").offset().top},"slow");'
+end
 page << 'jQuery("#submitBtn").after("<span id=\"added_msg\">Added!</span>");'

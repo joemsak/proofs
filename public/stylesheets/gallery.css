@@ -33,7 +33,7 @@ h1#logo{ margin:0 0 5px 5px; width:264px; height:35px; background:url(../images/
 
 #png, #protect-me{ position:absolute; top:0; left:0; width:699px; height:466px; z-index:900; }
 #photo-bg{ position:absolute; top:0; left:0; width:699px; height:466px; text-align:center; margin:0 0 5px; background:#343434 url(/images/ajax-loader-gray.gif) no-repeat center center; }
-#caption{ position:absolute; bottom:0; left:0; height:80px; background:url(/images/order_photo_bg.png); width:679px; padding:10px; display:none; z-index:901; }
+#caption{ position:absolute; bottom:0; left:0; height:80px; background:url(/images/order_photo_bg_75.png); width:679px; padding:10px; display:none; z-index:901; }
 #caption.show{ display:block; }
 
 #photo{ display:none; float:left; width:699px; height:466px; position:relative; text-align:center; margin:0 0 5px; }
