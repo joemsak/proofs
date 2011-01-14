@@ -1,2 +1,4 @@
 log/*
 public/system/*
+config/database.yml
+config/config.yml
