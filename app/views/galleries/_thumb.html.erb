@@ -1,0 +1,22 @@
+<li>
+	<%= link_to image_tag(thumb.image.url(:thumb)), thumb.image.url(:large), :original => thumb.image.url, :class => 'thumb' %>
+	<div class="caption">
+		<h2>Order Photo</h2>
+		<% form_remote_tag :url => url_for(:controller => "galleries", :action => "add_to_cart",  :id => params[:id], :user_id => @user.id) do -%>
+		<%= label_tag('quantity','Qty:') %>
+		<%= text_field_tag('quantity', '1') %>
+		
+		<%= label_tag('size','Size:') %>
+		<%= collection_select(:size, :option, @sizes, :name_and_price, :name) %>
+		
+		<%= hidden_field_tag(:photo_id, thumb.id) %>
+		<%= submit_tag 'Add to Cart', :id => 'submitBtn' %>
+		
+		<% end -%>
+		<div id="preview">
+			Price:<br />
+			$<span id="photo_price"></span>
+		</div>
+		<div style="clear:both; padding:10px 0; font-size:1.2em">(For questions, reference this photo by: <%= thumb.image_file_name %>)</div>
+	</div>
+</li>

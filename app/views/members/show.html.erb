@@ -1,0 +1,25 @@
+<h2><%=h @user.name %></h2>
+<h3>Galleries</h3>
+<% if @user.galleries.empty? -%>
+	<p>No galleries yet.</p>
+<% end -%>
+<ul>
+<% @user.galleries.each do |g| -%>
+	<li><%= link_to g.name, gallery_path(g) %></li>
+<% end -%>
+</ul>
+<h3>Orders</h3>
+<% if @user.orders.empty? -%>
+	<p>No orders yet.</p>
+<% end -%>
+<ul>
+<% @user.orders.each do |o| -%>
+	<li><%= link_to @user.login.titleize + '_' + o.id.to_s, order_path(o) %> placed <%= time_ago_in_words(o.created_at) %> ago</li>
+<% end -%>
+</ul>
+
+
+<% if_admin? do -%>
+<p><%= link_to 'Create a new gallery for this user', new_gallery_path(:user_id => @user.id) %></p>
+<% end -%>
+

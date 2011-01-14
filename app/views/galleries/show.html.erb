@@ -1,0 +1,42 @@
+<div id="sub-content" class="gallery clear">
+	<div id="png">
+		<%= image_tag('these-aint-your-photos!.png', :id => 'protect-me', :alt => '') %>
+		<div id="caption" class="clear">
+		</div>		
+	</div>
+	
+	<div id="photo-bg">
+	</div>
+	
+	<div id="photo">
+	</div>
+		
+	<div id="thumbs">
+		<ul id="thumb-list" class="thumbs noscript">
+			<%= render :partial => 'thumb', :collection => @gallery.photos %>
+		</ul>
+	</div>
+	<div id="controls"></div>
+	
+	
+	<% if_admin? do -%>
+		<p id="admin_links" class="clear">
+			<%= link_to 'Edit this gallery', edit_gallery_path(@gallery) %> |
+			<%= link_to 'Back', galleries_path %>
+		</p>
+	<% end -%>
+	
+	<% if @user.galleries.size > 1 -%>
+		<p class="other_galleries">
+		You have <%= pluralize(@user.galleries.size, 'gallery') %> to choose from:<br />
+		<% @user.galleries.each do |g| -%>
+			<span class="<%= g.id.to_s == request.path_parameters[:id].to_s %>"><%= link_to g.name, gallery_path(g) %></span>
+		<% end -%>
+		</p>
+	<% else -%>
+		<p class="other_galleries">Viewing Gallery: <%= @gallery.name %></p>
+	<% end -%>
+	<div id="cart"<% if @cart.items.empty? %> style="display: none"<% end %>>
+		<%= render(:partial => "cart", :object => @cart) %>
+	</div>
+</div>

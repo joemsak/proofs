@@ -1,0 +1,25 @@
+<div id="confirm">
+<h2>Please Confirm Your Payment Details</h2>
+
+<div id="shipping_to">
+	<h3><%= @address['name'] %></h3>
+	<p><%= @address['address1'] %> <%= @address['address2'] %><br />
+	<%= @address['city'] %>, <%= @address['state'] %> <%= @address['zip'] %><br />
+	<%= @address['country'] %></p>
+</div>
+
+<div id="cart">
+	<%= render(:partial => "galleries/cart", :object => @cart) %>
+</div>
+
+
+	<% form_tag({ :action => 'complete', :token => params[:token], :payer_id => params[:PayerID] }) do %>
+	  <%= submit_tag 'Complete Payment' %>
+	<% end -%>
+
+</div>
+<script src="http://www.google.com/jsapi"></script>
+<script>
+	google.load('jquery','1.3.2');
+</script>
+<%= javascript_tag 'jQuery.noConflict();' %>

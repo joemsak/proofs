@@ -1,0 +1,59 @@
+<div id="confirm">
+<h2>Please Confirm Your Payment Details</h2>
+<p>You will <strong>not</strong> be charged at this time. You must make payment arrangements with Michael once you submit your order.</p>
+<h2>Your Contact Info</h2>
+
+<div id="new_payment_address">
+
+<% form_for(:contact, :url => { :action => 'manual_complete' }) do |f| -%>
+<%= f.error_messages %>
+<p>
+	<%= f.label :name %><br />
+	<%= f.text_field :name %>	
+</p>
+<p>
+	<%= f.label :address %><br />
+	<%= f.text_field :address %>	
+</p>
+<p>
+	<%= f.label :city %><br />
+	<%= f.text_field :city %>	
+</p>
+<p>
+	<%= f.label :state %><br />
+	<%= f.text_field :state %>	
+</p>
+<p>
+	<%= f.label :zipcode, 'Zip Code' %><br />
+	<%= f.text_field :zipcode %>	
+</p>
+<p>
+	<%= f.label :email %><br />
+	<%= f.text_field :email %>	
+</p>
+<p>
+	<%= f.label :phone_number %><br />
+	<%= f.text_field :phone_number %>	
+</p>
+<%= f.hidden_field :user_id, :value => @user.id %>
+	<p>By clicking 'Submit Order', you agree to pay Michael the total price shown below.</p>
+	<%= f.submit 'Submit Order' %>
+<% end -%>
+
+
+<div id="cart">
+	<%= render(:partial => "galleries/cart", :object => @cart) %>
+</div>
+
+</div>
+
+
+
+
+
+</div>
+<script src="http://www.google.com/jsapi"></script>
+<script>
+	google.load('jquery','1.3.2');
+</script>
+<%= javascript_tag 'jQuery.noConflict();' %>

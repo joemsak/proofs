@@ -1,0 +1,23 @@
+<h2>Log in with the information provided by Michael</h2>
+<% form_tag session_path do -%>
+
+	<div class="field_row">
+		<%= label_tag 'login', "Username" %>
+		<%= text_field_tag 'login', @login %><br />
+	</div>
+
+	<div class="field_row">
+		<%= label_tag 'password' %>
+		<%= password_field_tag 'password', nil %><br/>
+	</div>
+
+<% if_recaptcha? do %>
+	<div class="field_row">
+		<label for="recaptcha">Please enter the following words below.</label>
+		<%= recaptcha_tags(:public_key => '6LdHrwYAAAAAAP0-z5JzVHTEcK-J8Mof00jcWbL9') %><br />
+	</div>
+<% end %>
+
+	<p><%= submit_tag 'Log in', :disable_with => "Signing in&hellip;" %></p>
+<% end -%>
+

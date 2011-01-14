@@ -1,0 +1,2 @@
+page.replace_html("cart", :partial => "cart", :object => @cart)
+page << 'jQuery("#added_msg").remove(); jQuery("#submitBtn").val("Add to Cart").removeAttr("disabled");'

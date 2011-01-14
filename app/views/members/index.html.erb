@@ -1,0 +1,28 @@
+<h2>Customers</h2>
+
+	<table id="members_table">
+		<tr>
+			<th scope="col">Name</th>
+			<th scope="col">Login</th>
+			<th scope="col">Galleries</th>
+			<th scope="col">Action</th>
+		</tr>
+  <% for user in @users
+  	unless user.has_role?('admin') -%>
+		<tr>
+			<td><%= link_to h(user.name), member_path(user) %></td>
+			<td><%=h user.login %></td>
+			<td>
+				<% user.galleries.each do |g| -%>
+					<%= link_to g.name, gallery_path(g.id) %><br />
+				<% end -%>
+			</td>
+			<td>
+				<%= link_to 'Add gallery', new_gallery_path(:user_id => user.id) %>
+			</td>
+		</tr>
+	<% end
+		end -%>
+	</table>
+
+	<%= will_paginate @users %>

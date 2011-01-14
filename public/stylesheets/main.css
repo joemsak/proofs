@@ -1,0 +1,135 @@
+
+.yui-d2f {
+	padding: 20px;
+}
+
+#main_navigation li {
+	display: inline;
+	list-style-type: none;
+}
+
+h1, h2, h3 {
+	margin-top: 0em;
+	margin-right: 0pt;
+	margin-bottom: 0em;
+	margin-left: 0pt;
+}
+p {
+	margin-bottom: 0em;
+}
+
+#hd .yui-u {
+	text-align: right;
+}
+
+#hd .first {
+	text-align: left;
+}
+
+#bd .yui-b {
+	border: 1px solid #999999;
+	padding: 5px;
+}
+
+/**
+#bd .yui-main div.yui-b {
+	border: 0px;
+} **/
+
+/* Scaffolding CSS */
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* Flash Notice Style */
+#flash {
+	text-align: center;
+	padding: .5em;
+	margin-bottom: 1em;
+	font: bold 1em sans-serif;
+}
+
+.notice {
+	border: 1px solid #000099;
+	background-color: #F0F0FF;
+	color:#000;
+}
+
+.error {
+	border: 1px solid #AF5F5F;
+	background-color: #FFF0F0;
+}
+
+.warning {
+	border: 1px solid #FFCC00;
+	background-color: #FFFFCC;
+}
+
+/* embeds the openid image in the text field */
+input#openid_identifier {
+   background: url(http://openid.net/login-bg.gif) no-repeat;
+   background-color: #fff;
+   background-position: 0 50%;
+   color: #000;
+   padding-left: 18px;
+}
+
+.field_row{ padding:10px 0; }
+.field_row label{ display:block; font-weight:bold; }
+.field_row input{ border:1px solid #000; padding:2px; }
+.field_row input#user_email{ width:250px; }
+.field_row input#user_password{ width:100px; }
+.field_row input#user_password_confirmation{ width:100px; }
+.btnSubmit{ text-align:right; }
+
+#ft{ padding:10px 0; }
+
+h2, h3, p{ margin:10px 0; }
+
+#hd{ background:#000; color:#fff; padding:10px; }
+#hd a{ color:#fff; }
+#members_table td{ vertical-align:top; padding:5px 20px; }
+#members_table tr:hover td{ background:#eee; }
+.button-to{ padding:10px; text-align:right; }
+form.button-to{ display:none; }
+
+#confirm{ width:500px; margin:10px auto; }
+
+#cart li{ list-style:none; text-align:right; font-size:2em; padding:10px; border-top:1px solid #ccc; }
+#cart li a{ font-size:0.7em; }
+#shipping_to{ padding:10px; background:#F6FCB8; border:1px solid #000; }
+.total_price{ padding:10px; border:solid #000; border-width:1px 0; font-size:2em; text-align:right; }
+
+a, img, div{ behavior:url(/javascripts/iepngfix.htc) !important; }

@@ -1,0 +1,17 @@
+<h2>Photos <%=h @order.user.name %> ordered <%= time_ago_in_words(@order.created_at) %> ago.</h2>
+<ul>
+<% @order.line_items.each do |li| -%>
+	<li><%=h li.quantity %> &times; <%= link_to li.photo.image_file_name, li.photo.image.url %> at <%=h li.size.split('_')[0] %> - <%= number_to_currency(li.price) %></li>
+<% end -%>
+</ul>
+<p class="total_price">
+	Total Price: <%= number_to_currency(@total_price) %>
+</p>
+<% if @order.contact -%>
+	<% if_admin? do -%><h2>This customer wishes to pay manually.</h2><% end -%>
+	<p class="name"><%= @order.contact.name %></p>
+	<p class="address"><%= @order.contact.address %></p>
+	<p class="city"><%= @order.contact.city %>, <%= @order.contact.state %> <%= @order.contact.zipcode %></p>
+	<p class="email"><%= mail_to @order.contact.email %></p>
+	<p class="phone_number"><%= number_to_phone(@order.contact.phone_number) %></p>
+<% end -%>

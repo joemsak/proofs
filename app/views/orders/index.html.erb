@@ -1,0 +1,18 @@
+<h2>Orders</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Ordered</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%=h order.user.name %></td>
+    <td><%= order.created_at.to_s(:long) %><br />
+    <small><%= time_ago_in_words(order.created_at) + ' ago.' %></small></td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to 'Destroy', order, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,16 @@
+<h2>New gallery for <%= @user.name %></h2>
+
+<% form_for(@gallery) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', galleries_path %>

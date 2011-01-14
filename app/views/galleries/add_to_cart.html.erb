@@ -1,0 +1,8 @@
+<h2 class="cart_title">Your Cart</h2> 
+<ul class="cart"> 
+	<%= render(:partial => "cart_item", :collection => @cart.items) %>
+</ul> 
+<p class="total_price">
+	<%= number_to_currency(@cart.total_price) %>
+</p>
+<%= button_to 'Empty cart', :action => 'empty_cart' %>

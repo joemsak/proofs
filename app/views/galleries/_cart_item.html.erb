@@ -1,0 +1,7 @@
+<li class="<%= cycle('odd','even') %>">
+	<%=h cart_item.quantity %> &times; <%= image_tag(cart_item.photo.image.url(:medium)) %>
+	<p class="file_name"><%=h cart_item.photo.image_file_name %></p>
+	<p class="requested_size"><%=h cart_item.size.split('_')[0] %></p>
+	<p class="price"><%=h number_to_currency(cart_item.price) %></p>
+	<p><%= link_to_remote "remove", :url => { :controller => :galleries, :action => :remove_from_cart , :photo => cart_item.photo, :size => cart_item.size } %></p>
+</li>
